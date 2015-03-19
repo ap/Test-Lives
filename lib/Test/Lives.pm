@@ -10,11 +10,11 @@ use Exporter::Tidy default => [ qw( lives_and ) ];
 use Test::Builder ();
 
 my $Tester = Test::Builder->new;
+*Level = \$Test::Builder::Level;
 
 sub lives_and (&;$) {
 	my ( $code, $name ) = @_;
 
-	package Test::Builder;
 	local our $Level = $Level + 1; # this function
 
 	my $ok;
