@@ -8,7 +8,7 @@ Test::Lives - the 1UP approach to testing exceptional code
 
 =head1 VERSION
 
-version 1.000
+version 1.001
 
 =head1 SYNOPSIS
 
