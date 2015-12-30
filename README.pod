@@ -32,13 +32,6 @@ The description will be available inside the block in the C<$_> variable.
 
 If the block ends up throwing an exception, a test failure will be logged.
 
-=head1 BUGS AND LIMITATIONS
-
-Currently this module is written against the traditional, singleton-based
-Test::Builder design only. It should also have an implementation appropriate
-for newer Test::Builder versions, and pick between them at runtime. But that
-is not yet implemented.
-
 =head1 SEE ALSO
 
 =over 4
