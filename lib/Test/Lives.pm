@@ -19,6 +19,7 @@ sub lives_and (&;$) {
 
 	eval {
 		local $Level = $Level + 2; # eval block + callback
+		local $Carp::Internal{(__PACKAGE__)} = 1;
 		$ok = $code->() for $name;
 		1;
 	} or do {
