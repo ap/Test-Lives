@@ -4,6 +4,8 @@ use warnings;
 
 package Test::Lives;
 
+# ABSTRACT: the 1UP approach to testing exceptional code
+
 use Exporter::Tidy default => [ qw( lives_and ) ];
 use Test::Builder ();
 
@@ -35,7 +37,7 @@ sub lives_and (&;$) {
 
 __END__
 
-# ABSTRACT: the 1UP approach to testing exceptional code
+=pod
 
 =head1 SYNOPSIS
 
