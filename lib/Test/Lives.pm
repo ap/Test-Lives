@@ -4,7 +4,7 @@ use warnings;
 
 package Test::Lives;
 
-# ABSTRACT: the 1UP approach to testing exceptional code
+# ABSTRACT: decorate tests with a no-exceptions assertion
 
 use Exporter::Tidy default => [ qw( lives_and ) ];
 use Test::Builder ();
