@@ -4,7 +4,6 @@ package Test::Lives;
 
 # ABSTRACT: decorate tests with a no-exceptions assertion
 
-use Exporter::Tidy default => [ qw( lives_and ) ];
 use Test::Builder ();
 
 my $Tester = Test::Builder->new;
@@ -29,6 +28,13 @@ sub lives_and (&;$) {
 	};
 
 	return $ok;
+}
+
+sub import {
+	my $class = shift;
+	do { die "Unknown symbol: $_" if $_ ne 'lives_and' } for @_;
+	no strict 'refs';
+	*{ caller . '::lives_and' } = \&lives_and;
 }
 
 1;
