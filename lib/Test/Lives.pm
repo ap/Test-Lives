@@ -54,28 +54,17 @@ __END__
 
 =head1 DESCRIPTION
 
-This module provides only one function, C<lives_and>, which allows you to test
-things that could (but shouldn't) throw an exception, without having to have
+This module provides only one function, C<lives_and>, which works almost
+exactly like the function of the same name in L<Test::Exception>. That is,
+it allows you to test things that could (but shouldn't) throw an exception
+without having to have
 two separate tests with two separate results (and two separate descriptions).
 
 You pass it a block of code to run (which should contain one test assertion)
 and a test description to give the assertion inside the block.
 
 The description will be available inside the block in the C<$_> variable.
+(This is different from L<Test::Exception>, which employs hacky magic to
+relieve you of having to pass the description to the decorated assertion.)
 
 If the block ends up throwing an exception, a test failure will be logged.
-
-=head1 SEE ALSO
-
-=over 4
-
-=item * L<Test::Exception>
-
-The original perpetrator of the C<lives_and> design as an assertion decorator.
-Unfortunately it has grown several questionable dependencies.
-
-=item * L<Test::Fatal>
-
-Recommended for any exception-related testing needs beyond C<lives_and>.
-
-=back
