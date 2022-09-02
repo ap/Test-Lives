@@ -2,8 +2,9 @@ use 5.006; use strict; use warnings;
 
 package Test::Lives;
 
-# ABSTRACT: decorate tests with a no-exceptions assertion
+our $VERSION = '1.002';
 
+use Carp ();
 use Test::Builder ();
 
 my $Tester = Test::Builder->new;
@@ -39,6 +40,12 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
+=head1 NAME
+
+Test::Lives - decorate tests with a no-exceptions assertion
+
 =head1 SYNOPSIS
 
  use Test::More;
@@ -64,3 +71,5 @@ The description will be available inside the block in the C<$_> variable.
 relieve you of having to pass the description to the decorated assertion.)
 
 If the block ends up throwing an exception, a test failure will be logged.
+
+=cut
