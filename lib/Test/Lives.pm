@@ -7,17 +7,13 @@ package Test::Lives;
 use Test::Builder ();
 
 my $Tester = Test::Builder->new;
-*Level = \$Test::Builder::Level;
 
 sub lives_and (&;$) {
 	my ( $code, $name ) = @_;
 
-	local our $Level = $Level + 1; # this function
-
 	my $ok;
 
 	eval {
-		local $Level = $Level + 2; # eval block + callback
 		local $Carp::Internal{(__PACKAGE__)} = 1;
 		$ok = $code->() for $name;
 		1;
